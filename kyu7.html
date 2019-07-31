@@ -94,14 +94,24 @@
         /* Good vs Evil */
 
         function goodVsEvil(good, evil) {
-            let good = [1, 2, 3,]
-            let goodArray = good.split(" ");
-            let evilArray = evil.split(" ");
+            let goodTotal = 0, evilTotal = 0;
 
-            return goodArray;
+            let goodWorth = [1, 2, 3, 3, 4, 10], evilWorth = [1, 2, 2, 2, 3, 5, 10];
+
+            let goodArray = good.split(" "), evilArray = evil.split(" ");
+            
+            goodWorth.forEach((element, index) => {
+                goodTotal += element * parseInt(goodArray[index]);
+            });
+            
+            evilWorth.forEach((element, index) => {
+                evilTotal += element * parseInt(evilArray[index]);
+            });
+
+            return goodTotal > evilTotal ? "Battle Result: Good triumphs over Evil" : goodTotal < evilTotal ? "Battle Result: Evil eradicates all trace of Good" : "Battle Result: No victor on this battle field";
         }
 
-        console.log(goodVsEvil('1 1 1 1 1 1', '1 1 1 1 1 1 1'));
+        // console.log(goodVsEvil('1 1 1 1 1 1', '1 1 1 1 1 1 1'));
         
     </script>
 </body>
