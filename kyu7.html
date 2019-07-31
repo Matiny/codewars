@@ -73,25 +73,36 @@
 
         /* Decode the Morse code */
 
-        // decodeMorse = function (morseCode) {
-        //     // Time to handle business!!
-        //     let phrase = "";
-        //     let morseArray = morseCode.trim().split(" ")
-        //     morseArray.forEach((element, index) => { 
-        //         if (element !== "") {
-        //             phrase += MORSE_CODE[element];
-        //         }
-        //         else {
-        //             phrase += " ";
-        //             morseArray.splice(index + 1, 1);
-        //         }
-        //     });
-        //     return phrase;
-        // }
+        decodeMorse = function (morseCode) {
+            // Time to handle business!!
+            let phrase = "";
+            let morseArray = morseCode.trim().split(" ")
+            morseArray.forEach((element, index) => {
+                if (element !== "") {
+                    phrase += MORSE_CODE[element];
+                }
+                else {
+                    phrase += " ";
+                    morseArray.splice(index + 1, 1);
+                }
+            });
+            return phrase;
+        }
 
         // console.log(decodeMorse('   .   .   '));'
-        
 
+        /* Good vs Evil */
+
+        function goodVsEvil(good, evil) {
+            let good = [1, 2, 3,]
+            let goodArray = good.split(" ");
+            let evilArray = evil.split(" ");
+
+            return goodArray;
+        }
+
+        console.log(goodVsEvil('1 1 1 1 1 1', '1 1 1 1 1 1 1'));
+        
     </script>
 </body>
 
