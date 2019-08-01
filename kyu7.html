@@ -116,18 +116,13 @@
         /* Anagrams */
 
         function anagrams(word, words) {
-            let anaArray = [];
             let wordOne = word.split("").sort().join("");
-            words.forEach(element => {
-                let wordTwo = element.split("").sort().join("");
-                if (wordTwo === wordOne) {
-                    anaArray.push(element);
-                }
+            return words.filter(element => {
+                return wordOne === element.split("").sort().join("");
             });
-            return anaArray;
         }
 
-        // console.log(anagrams('laser', ['lazing', 'lazy',  'lacer']));
+        console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
         
 
     </script>
