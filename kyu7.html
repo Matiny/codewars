@@ -99,11 +99,11 @@
             let goodWorth = [1, 2, 3, 3, 4, 10], evilWorth = [1, 2, 2, 2, 3, 5, 10];
 
             let goodArray = good.split(" "), evilArray = evil.split(" ");
-            
+
             goodWorth.forEach((element, index) => {
                 goodTotal += element * parseInt(goodArray[index]);
             });
-            
+
             evilWorth.forEach((element, index) => {
                 evilTotal += element * parseInt(evilArray[index]);
             });
@@ -112,7 +112,24 @@
         }
 
         // console.log(goodVsEvil('1 1 1 1 1 1', '1 1 1 1 1 1 1'));
+
+        /* Anagrams */
+
+        function anagrams(word, words) {
+            let anaArray = [];
+            let wordOne = word.split("").sort().join("");
+            words.forEach(element => {
+                let wordTwo = element.split("").sort().join("");
+                if (wordTwo === wordOne) {
+                    anaArray.push(element);
+                }
+            });
+            return anaArray;
+        }
+
+        // console.log(anagrams('laser', ['lazing', 'lazy',  'lacer']));
         
+
     </script>
 </body>
 
