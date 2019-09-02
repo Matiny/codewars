@@ -15,10 +15,59 @@
         /* Song Decoder */
 
         function songDecoder(song) {
-            return song.split("WUB").filter((char) => char !== "").join(" ")
+            return song.split("WUB").filter(char => char !== "").join(" ")
         }
 
-        console.log(songDecoder("AWUBWUBWUBBWUBWUBWUBC"));
+        // console.log(songDecoder("AWUBWUBWUBBWUBWUBWUBC"));
+
+        /* If you can read this... */
+
+        function to_nato(words) {
+            // Go code
+            let NATO = {
+                "a": "Alpha",
+                "b": "Bravo",
+                "c": "Charlie",
+                "d": "Delta",
+                "e": "Echo",
+                "f": "Foxtrot",
+                "g": "Golf",
+                "h": "Hotel",
+                "i": "India",
+                "j": "Juliet",
+                "k": "Kilo",
+                "l": "Lima",
+                "m": "Mike",
+                "n": "November",
+                "o": "Oscar",
+                "p": "Papa",
+                "q": "Quebec",
+                "r": "Romeo",
+                "s": "Sierra",
+                "t": "Tango",
+                "u": "Uniform",
+                "v": "Victor",
+                "w": "Whiskey",
+                "x": "Xray",
+                "y": "Yankee",
+                "z": "Zulu",
+            }
+
+            let result = [];
+
+            let natoText = words.toLowerCase().split("").filter(char => char !== " ").forEach(letter => {
+                if (letter.match(/[a-z]/i)) {
+                    result.push(NATO[letter]);
+                }
+                else {
+                    result.push(letter);
+                }
+            });
+
+            return result.join(" ");
+        }
+
+        console.log(to_nato('If you can read'));        
 
 
     </script>
