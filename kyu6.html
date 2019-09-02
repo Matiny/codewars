@@ -67,8 +67,28 @@
             return result.join(" ");
         }
 
-        console.log(to_nato('If you can read'));        
+        // console.log(to_nato('If you can read'));  
 
+        /* Decipher this! */
+
+        function decipherThis(str) {
+            //have fun!
+            let decoded = [];
+            str.split(" ").forEach(word => {
+                let number = word.match(/\d+/)[0];
+                let newWord = word.replace(/[0-9]/g, '').split("");
+                newWord.splice(0, 0, newWord.pop());
+                newWord.push(newWord[1]);
+                newWord.splice(1, 1);
+                
+                decoded.push(String.fromCharCode(number) + newWord.join(""));
+            });
+            
+            return decoded.join(" ");
+        };
+
+        console.log(decipherThis('72eva 97 103o 97t 116sih 97dn 115ee 104wo 121uo 100o'));
+        
 
     </script>
 </body>
